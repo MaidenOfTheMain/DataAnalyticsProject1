@@ -9,13 +9,14 @@ while (current_outlier > data1_mean)
   [out] = rmoutlier(out);
   current_outlier = outlier(out);
 endwhile
-[pks idx] = findpeaks(data1);
+[pks idx] = findpeaks(out);
+t_out = 0:1:size(out, 1)-1;
 
-dt = t(2)-t(1);
-[pks2 idx2] = findpeaks(data1, "MinPeakDistance", round(4/dt));
+dt = t_out(2)-t_out(1);
+[pks2 idx2] = findpeaks(out, "MinPeakDistance", round(4/dt));
 annotation('textbox',[0.5 0.01 0.1 0.1],'string','my text','fitboxtotext','on');
 
 subplot(1, 1, 1)
-plot(t,data1,t(idx2),data1(idx2),'or')
+plot(t_out,out,t_out(idx2),out(idx2),'or')
 axis tight
 legend("Location","NorthOutside","Orientation","horizontal")
