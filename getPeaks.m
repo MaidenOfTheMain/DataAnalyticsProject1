@@ -11,6 +11,7 @@ while (current_outlier > data1_mean)
 endwhile
 [pks idx] = findpeaks(out);
 t_out = 0:1:size(out, 1)-1;
+[yh, lambda] = regdatasmooth (t_out, out, "d",4,"stdev",1e-1,"midpointrule");
 
 dt = t_out(2)-t_out(1);
 [pks2 idx2] = findpeaks(out, "MinPeakDistance", round(4/dt));
