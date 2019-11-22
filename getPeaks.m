@@ -10,6 +10,20 @@ endwhile
 t_out = 0:1:size(out, 1)-1;
 out_smooth = sgolayfilt(sgolayfilt(out));
 [pks idx] = findpeaks(out_smooth, "MinPeakDistance", round(4));
+NNI = []
+k = 2;
+l = 1;
+interval = 0.0;
+pulse_time_interval = 60 / (length(out_smooth));
+for i = 1:length(idx)
+  if k == (length(idx) + 1)
+    break;
+  end
+  interval = idx(k) - idx(i);
+  NNI(l) = interval;
+  ++l;
+  ++k;
+end
 
 
 
