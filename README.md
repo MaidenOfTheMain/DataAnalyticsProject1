@@ -1,6 +1,8 @@
 # Data Analytics Project 1
 > PPG plotter / AVNN and SDNN solver
 
+![Output of sampled data.](https://i.imgur.com/Gz8M1d5.png)
+
 ## Table of contents
 
 - [Dependencies](#dependencies)
