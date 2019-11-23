@@ -32,7 +32,7 @@ Data must be taken from a PPG sensor for 60 seconds.
 ## How to Use
 Run within GNU Octave
 ```
-$ cd /DataAnalyticsProject1
+$ cd /Directory-containing-DataAnalyticsProject1
 $ getPeaks
 ```
 
